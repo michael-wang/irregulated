@@ -23,3 +23,5 @@ class ErrorText extends StatelessWidget {
     );
   }
 }
+
+const empty = SizedBox.shrink();
