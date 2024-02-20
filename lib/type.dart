@@ -20,3 +20,7 @@ enum Boolean {
         Boolean.unknown => fallback,
       };
 }
+
+typedef AsyncRet = Future<({bool ok, Object? err})>;
+({bool ok, Object? err}) ret(bool ok, [Object? err]) => (ok: ok, err: err);
+({bool ok, Object? err}) unimplemented() => ret(false, UnimplementedError());

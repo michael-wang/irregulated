@@ -5,7 +5,7 @@ class ErrorText extends StatelessWidget {
   const ErrorText({
     super.key,
     required this.message,
-    required this.noErrorMessage,
+    this.noErrorMessage = '',
     this.scale,
   });
 
