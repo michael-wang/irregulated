@@ -1,56 +1,61 @@
 // Authentication API errors: https://firebase.google.com/docs/auth/admin/errors
-const authClaimsTooLarge = 'auth/claims-too-large';
-const authEmailAlreadyExists = 'auth/email-already-exists';
-const authIdTokenExpired = 'auth/id-token-expired';
-const authIdTokenRevoked = 'auth/id-token-revoked';
-const authInsufficientPermission = 'auth/insufficient-permission';
-const authInternalError = 'auth/internal-error';
-const authInvalidArgument = 'auth/invalid-argument';
-const authInvalidClaims = 'auth/invalid-claims';
-const authInvalidContinueUri = 'auth/invalid-continue-uri';
-const authInvalidCreationTime = 'auth/invalid-creation-time';
-const authInvalidCredential = 'auth/invalid-credential';
-const authInvalidDisabledField = 'auth/invalid-disabled-field';
-const authInvalidDisplayName = 'auth/invalid-display-name';
-const authInvalidDynamicLinkDomain = 'auth/invalid-dynamic-link-domain';
-const authInvalidEmail = 'auth/invalid-email';
-const authInvalidEmailVerified = 'auth/invalid-email-verified';
-const authInvalidHashAlgorithm = 'auth/invalid-hash-algorithm';
-const authInvalidHashBlockSize = 'auth/invalid-hash-block-size';
-const authInvalidHashDerivedKeyLength = 'auth/invalid-hash-derived-key-length';
-const authInvalidHashKey = 'auth/invalid-hash-key';
-const authInvalidHashMemoryCost = 'auth/invalid-hash-memory-cost';
-const authInvalidHashParallelization = 'auth/invalid-hash-parallelization';
-const authInvalidHashRounds = 'auth/invalid-hash-rounds';
-const authInvalidHashSaltSeparator = 'auth/invalid-hash-salt-separator';
-const authInvalidIdToken = 'auth/invalid-id-token';
-const authInvalidLastSignInTime = 'auth/invalid-last-sign-in-time';
-const authInvalidPageToken = 'auth/invalid-page-token';
-const authInvalidPassword = 'auth/invalid-password';
-const authInvalidPasswordHash = 'auth/invalid-password-hash';
-const authInvalidPasswordSalt = 'auth/invalid-password-salt';
-const authInvalidPhoneNumber = 'auth/invalid-phone-number';
-const authInvalidPhotoUrl = 'auth/invalid-photo-url';
-const authInvalidProviderData = 'auth/invalid-provider-data';
-const authInvalidProviderId = 'auth/invalid-provider-id';
-const authInvalidOauthResponseType = 'auth/invalid-oauth-responsetype';
-const authInvalidSessionCookieDuration = 'auth/invalid-session-cookie-duration';
-const authInvalidUid = 'auth/invalid-uid';
-const authInvalidUserImport = 'auth/invalid-user-import';
-const authMaximumUserCountExceeded = 'auth/maximum-user-count-exceeded';
-const authMissingAndroidPkgName = 'auth/missing-android-pkg-name';
-const authMissingContinueUri = 'auth/missing-continue-uri';
-const authMissingHashAlgorithm = 'auth/missing-hash-algorithm';
-const authMissingIosBundleId = 'auth/missing-ios-bundle-id';
-const authMissingUid = 'auth/missing-uid';
-const authMissingOauthClientSecret = 'auth/missing-oauth-client-secret';
-const authOperationNotAllowed = 'auth/operation-not-allowed';
-const authPhoneNumberAlreadyExists = 'auth/phone-number-already-exists';
-const authProjectNotFound = 'auth/project-not-found';
-const authReservedClaims = 'auth/reserved-claims';
-const authSessionCookieExpired = 'auth/session-cookie-expired';
-const authSessionCookieRevoked = 'auth/session-cookie-revoked';
-const authTooManyRequests = 'auth/too-many-requests';
-const authUidAlreadyExists = 'auth/uid-already-exists';
-const authUnauthorizedContinueUri = 'auth/unauthorized-continue-uri';
-const authUserNotFound = 'auth/user-not-found';
+enum AuthErrorCode {
+  authClaimsTooLarge('auth/claims-too-large'),
+  authEmailAlreadyExists('auth/email-already-exists'),
+  authIdTokenExpired('auth/id-token-expired'),
+  authIdTokenRevoked('auth/id-token-revoked'),
+  authInsufficientPermission('auth/insufficient-permission'),
+  authInternalError('auth/internal-error'),
+  authInvalidArgument('auth/invalid-argument'),
+  authInvalidClaims('auth/invalid-claims'),
+  authInvalidContinueUri('auth/invalid-continue-uri'),
+  authInvalidCreationTime('auth/invalid-creation-time'),
+  authInvalidCredential('auth/invalid-credential'),
+  authInvalidDisabledField('auth/invalid-disabled-field'),
+  authInvalidDisplayName('auth/invalid-display-name'),
+  authInvalidDynamicLinkDomain('auth/invalid-dynamic-link-domain'),
+  authInvalidEmail('auth/invalid-email'),
+  authInvalidEmailVerified('auth/invalid-email-verified'),
+  authInvalidHashAlgorithm('auth/invalid-hash-algorithm'),
+  authInvalidHashBlockSize('auth/invalid-hash-block-size'),
+  authInvalidHashDerivedKeyLength('auth/invalid-hash-derived-key-length'),
+  authInvalidHashKey('auth/invalid-hash-key'),
+  authInvalidHashMemoryCost('auth/invalid-hash-memory-cost'),
+  authInvalidHashParallelization('auth/invalid-hash-parallelization'),
+  authInvalidHashRounds('auth/invalid-hash-rounds'),
+  authInvalidHashSaltSeparator('auth/invalid-hash-salt-separator'),
+  authInvalidIdToken('auth/invalid-id-token'),
+  authInvalidLastSignInTime('auth/invalid-last-sign-in-time'),
+  authInvalidPageToken('auth/invalid-page-token'),
+  authInvalidPassword('auth/invalid-password'),
+  authInvalidPasswordHash('auth/invalid-password-hash'),
+  authInvalidPasswordSalt('auth/invalid-password-salt'),
+  authInvalidPhoneNumber('auth/invalid-phone-number'),
+  authInvalidPhotoUrl('auth/invalid-photo-url'),
+  authInvalidProviderData('auth/invalid-provider-data'),
+  authInvalidProviderId('auth/invalid-provider-id'),
+  authInvalidOauthResponseType('auth/invalid-oauth-responsetype'),
+  authInvalidSessionCookieDuration('auth/invalid-session-cookie-duration'),
+  authInvalidUid('auth/invalid-uid'),
+  authInvalidUserImport('auth/invalid-user-import'),
+  authMaximumUserCountExceeded('auth/maximum-user-count-exceeded'),
+  authMissingAndroidPkgName('auth/missing-android-pkg-name'),
+  authMissingContinueUri('auth/missing-continue-uri'),
+  authMissingHashAlgorithm('auth/missing-hash-algorithm'),
+  authMissingIosBundleId('auth/missing-ios-bundle-id'),
+  authMissingUid('auth/missing-uid'),
+  authMissingOauthClientSecret('auth/missing-oauth-client-secret'),
+  authOperationNotAllowed('auth/operation-not-allowed'),
+  authPhoneNumberAlreadyExists('auth/phone-number-already-exists'),
+  authProjectNotFound('auth/project-not-found'),
+  authReservedClaims('auth/reserved-claims'),
+  authSessionCookieExpired('auth/session-cookie-expired'),
+  authSessionCookieRevoked('auth/session-cookie-revoked'),
+  authTooManyRequests('auth/too-many-requests'),
+  authUidAlreadyExists('auth/uid-already-exists'),
+  authUserNotFound('auth/user-not-found'),
+  authUnauthorizedContinueUri('auth/unauthorized-continue-uri');
+
+  const AuthErrorCode(this.literal);
+  final String literal;
+}
