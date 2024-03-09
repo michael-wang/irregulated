@@ -88,3 +88,7 @@ extension ThemeContext on BuildContext {
   Color get inversePrimary => Theme.of(this).colorScheme.inversePrimary;
   Color get surfaceTint => Theme.of(this).colorScheme.surfaceTint;
 }
+
+extension ColorDisabler on Color {
+  Color get disabled => withOpacity(0.38);
+}
