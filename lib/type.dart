@@ -19,6 +19,9 @@ enum Boolean {
         Boolean.nop => nop,
         Boolean.unknown => fallback,
       };
+
+  bool get isTrue => this == Boolean.yup;
+  bool get notTrue => this != Boolean.yup;
 }
 
 typedef AsyncRet = Future<({bool ok, Object? err})>;
